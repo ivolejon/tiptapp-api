@@ -1,10 +1,13 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const database = require('mongoose');
+const database = require("mongoose");
 
-database.connect(process.env.MONGODB_URI, { useNewUrlParser: true 
-}, (err) => {
-  if (err) throw err;
-});
+database.connect(
+  process.env.MONGODB_URI,
+  { useNewUrlParser: true, useFindAndModify: false },
+  err => {
+    if (err) throw err;
+  }
+);
 
 module.exports = database;
