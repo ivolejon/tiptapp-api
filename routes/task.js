@@ -32,6 +32,18 @@ const routes = [
     method: "POST",
     path: "/api/v1/tasks",
     handler: api.task.create.handler
+  },
+  {
+    // Mark task as done
+    method: "PUT",
+    path: "/api/v1/task/{id}/done",
+    handler: api.task.done.handler
+  },
+  {
+    // Mark task as active
+    method: "PUT",
+    path: "/api/v1/task/{id}/active",
+    handler: api.task.active.handler
   }
 
 ];

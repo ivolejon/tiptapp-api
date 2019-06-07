@@ -25,6 +25,22 @@ const taskController = {
       let data = await Task.findOne({ _id: id });
       return h.response(data).code(200);
     }
+  },
+  done: {
+    async handler(request, h) {
+      const filter = { _id: request.params.id };
+      const update = { status: "done" };
+      let data = await Task.findOneAndUpdate(filter, update);
+      return h.response(data).code(200);
+    }
+  },
+  active: {
+    async handler(request, h) {
+      const filter = { _id: request.params.id };
+      const update = { status: "active" };
+      let data = await Task.findOneAndUpdate(filter, update);
+      return h.response(data).code(200);
+    }
   }
 };
 
