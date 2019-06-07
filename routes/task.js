@@ -1,11 +1,11 @@
-const api = require('./../controllers');
-console.log(api.task.create);
+const api = require("./../controllers");
+
 const routes = [
   {
     method: "GET",
     path: "/",
     handler: (request, h) => {
-      return { msg: 'Todo API Coding Challenge' };
+      return { msg: "Todo API Coding Challenge" };
     }
   },
   {
@@ -14,6 +14,11 @@ const routes = [
     handler: (request, h) => {
       return { success: true };
     }
+  },
+  {
+    method: "GET",
+    path: "/api/v1/tasks",
+    handler: api.task.all.handler
   },
   {
     method: "POST",
