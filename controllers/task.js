@@ -41,6 +41,15 @@ const taskController = {
       let data = await Task.findOneAndUpdate(filter, update);
       return h.response(data).code(200);
     }
+  },
+  delete: {
+    async handler(request, h) {
+    // Made a decsion to make a 'soft deletion, task can be permanently deleted later...'
+      const filter = { _id: request.params.id };
+      const update = { status: "deleted" };
+      let data = await Task.findOneAndUpdate(filter, update);
+      return h.response(data).code(200);
+    }
   }
 };
 

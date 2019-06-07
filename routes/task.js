@@ -44,7 +44,13 @@ const routes = [
     method: "PUT",
     path: "/api/v1/task/{id}/active",
     handler: api.task.active.handler
-  }
+  },
+  {
+    // Mark task as active
+    method: "DELETE",
+    path: "/api/v1/task/{id}",
+    handler: api.task.delete.handler
+  } 
 
 ];
 
