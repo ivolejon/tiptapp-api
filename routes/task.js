@@ -50,7 +50,13 @@ const routes = [
     method: "DELETE",
     path: "/api/v1/task/{id}",
     handler: api.task.delete.handler
-  } 
+  },
+  {
+    //Get events associated with specific task (id)
+    method: "GET",
+    path: "/api/v1/task/{id}/events",
+    handler: api.task.events.handler
+  },
 
 ];
 
