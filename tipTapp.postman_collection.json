@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "36f1c075-fb8f-431d-96a0-eef2d64f3840",
+		"name": "tipTapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com/api/v1",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/tasks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "exampleTaskName",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "exampleTaskDescription",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com/api/v1/tasks",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "payload",
+							"value": "{\"name\":\"test\", \"description\":\"test\"}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com/api/v1/tasks",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/task/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com/api/v1/task/5cfbcb9c33982b96a2d97bbc",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"5cfbcb9c33982b96a2d97bbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/task/{id}/done",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com/api/v1/task/5cfbcb9c33982b96a2d97bbc/done",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"5cfbcb9c33982b96a2d97bbc",
+						"done"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/task/{id}/active",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com/api/v1/task/5cfbcb9c33982b96a2d97bbc/active",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"5cfbcb9c33982b96a2d97bbc",
+						"active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/task/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com/api/v1/task/5cfbcb9c33982b96a2d97bbc",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"5cfbcb9c33982b96a2d97bbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/task/{id}/events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ivo-tiptapp-api.herokuapp.com/api/v1/task/5cfbcb9c33982b96a2d97bbc/events",
+					"host": [
+						"ivo-tiptapp-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"task",
+						"5cfbcb9c33982b96a2d97bbc",
+						"events"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

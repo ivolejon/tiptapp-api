@@ -1,11 +1,11 @@
 const mongoose = require('./../utils/db');
 
 const eventModel = mongoose.Schema({
-  type: {type: String},
-  description: {type: String},
-  task: {type: String}
+  type: { type: String },
+  description: { type: String },
+  task: { type: String },
 }, {
-  timestamps: true
+  timestamps: true,
 });
 
 module.exports = mongoose.model('Event', eventModel);
