@@ -34,7 +34,7 @@ const taskController = {
     async handler(request, h) {
       const filter = { _id: request.params.id };
       const update = { status: "done" };
-      let data = await Task.findOneAndUpdate(filter, update);
+      let data = await Task.findOneAndUpdate(filter, update, {new:true});
       new Event({ type: "task", description: "markedAsDone", task: data._id }).save();
       return h.response(data).code(200);
     }
@@ -43,7 +43,7 @@ const taskController = {
     async handler(request, h) {
       const filter = { _id: request.params.id };
       const update = { status: "active" };
-      let data = await Task.findOneAndUpdate(filter, update);
+      let data = await Task.findOneAndUpdate(filter, update, {new:true});
       new Event({ type: "task", description: "markedAsActive", task: data._id }).save();
       return h.response(data).code(200);
     }
@@ -53,7 +53,7 @@ const taskController = {
     // Made a decsion to make a 'soft deletion, task (and events?) can be permanently deleted later if necessary'
       const filter = { _id: request.params.id };
       const update = { status: "deleted" };
-      let data = await Task.findOneAndUpdate(filter, update);
+      let data = await Task.findOneAndUpdate(filter, update, {new:true});
       new Event({ type: "task", description: "markedAsDeleted", task: data._id }).save();
       return h.response(data).code(200);
     }
