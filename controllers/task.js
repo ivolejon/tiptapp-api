@@ -1,6 +1,7 @@
 // jshint esversion:8
 const Task = require("./../models/task");
 const Event = require("./../models/event");
+
 const taskController = {
   create: {
     async handler(request, h) {
@@ -8,12 +9,11 @@ const taskController = {
         name: "ivoTestar",
         description: "ivoTestar",
         status: "active",
-        list: "default list"
+        list: "default list id" // If you want multiple lists
       });
       task.save();
-      let data = { message: "Task created successfully", task };
       new Event({ type: "task", description: "created", task: task._id }).save();
-      return h.response(data).code(201);
+      return h.response(task).code(201);
     }
   },
   all: {
@@ -30,7 +30,7 @@ const taskController = {
       return h.response(data).code(200);
     }
   },
-  done: {
+  markAsDone: {
     async handler(request, h) {
       const filter = { _id: request.params.id };
       const update = { status: "done" };
@@ -39,7 +39,7 @@ const taskController = {
       return h.response(data).code(200);
     }
   },
-  active: {
+  markAsActive: {
     async handler(request, h) {
       const filter = { _id: request.params.id };
       const update = { status: "active" };
@@ -48,7 +48,7 @@ const taskController = {
       return h.response(data).code(200);
     }
   },
-  delete: {
+  markAsDeleted: {
     async handler(request, h) {
     // Made a decsion to make a 'soft deletion, task can be permanently deleted later...'
       const filter = { _id: request.params.id };
@@ -61,6 +61,7 @@ const taskController = {
 
   events: {
     async handler(request, h) {
+      // Get all events with type:'task'.
       const filter = { task: request.params.id, type: 'task' };
       let data = await Event.find(filter).sort({ createdAt: "desc" });
       return h.response(data).code(200);

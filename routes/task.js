@@ -12,7 +12,7 @@ const routes = [
     method: "GET",
     path: "/api/v1",
     handler: (request, h) => {
-      return { success: true };
+      return { msg: "Todo API Coding Challenge" };
     }
   },
   {
@@ -37,19 +37,19 @@ const routes = [
     // Mark task as done
     method: "PUT",
     path: "/api/v1/task/{id}/done",
-    handler: api.task.done.handler
+    handler: api.task.markAsDone.handler
   },
   {
     // Mark task as active
     method: "PUT",
     path: "/api/v1/task/{id}/active",
-    handler: api.task.active.handler
+    handler: api.task.markAsActive.handler
   },
   {
     // Mark task as active
     method: "DELETE",
     path: "/api/v1/task/{id}",
-    handler: api.task.delete.handler
+    handler: api.task.markAsDeleted.handler
   },
   {
     //Get events associated with specific task (id)
