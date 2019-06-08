@@ -6,8 +6,8 @@ const taskController = {
   create: {
     async handler(request, h) {
       const task = await new Task({
-        name: "ivoTestar",
-        description: "ivoTestar",
+        name: request.payload.name,
+        description: request.payload.description,
         status: "active",
         list: "default list id" // If you want multiple lists
       });
