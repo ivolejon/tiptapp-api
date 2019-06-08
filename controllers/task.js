@@ -50,7 +50,7 @@ const taskController = {
   },
   markAsDeleted: {
     async handler(request, h) {
-    // Made a decsion to make a 'soft deletion, task can be permanently deleted later...'
+    // Made a decsion to make a 'soft deletion, task (and events?) can be permanently deleted later if necessary'
       const filter = { _id: request.params.id };
       const update = { status: "deleted" };
       let data = await Task.findOneAndUpdate(filter, update);
