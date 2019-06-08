@@ -4,7 +4,7 @@ const Hapi = require('@hapi/hapi');
 const routesTask = require('./routes/task');
 const init = async () => {
 
-    const server = Hapi.server({ port: process.env.PORT, host: 'localhost' });
+    const server = Hapi.server({ port: process.env.PORT, host: '0.0.0.0' });
     
     //Setting up routes
     routesTask.forEach((route)=>{
